@@ -1,0 +1,109 @@
+@use "../abstracts";
+
+.sale {
+    margin-bottom: 50px;
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        @include abstracts.screen(md) {
+            height: 480px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        height: 100%;
+        padding: 32px 90px;
+        background: #6e331a;
+        color: var(--second-text);
+
+        @include abstracts.screen(xxl) {
+            padding: 30px 60px;
+        }
+
+        @include abstracts.screen(xl) {
+            padding: 28px 60px;
+        }
+
+        @include abstracts.screen(lg) {
+            padding: 20px 0;
+        }
+    }
+
+    &__col {
+        @include abstracts.screen(md) {
+            height: 480px;
+        }
+    }
+
+    &__top {
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: uppercase;
+        text-wrap: nowrap;
+
+        @include abstracts.screen(xl) {
+            font-size: 1.4rem;
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+        }
+    }
+
+    &__title {
+        margin-top: 112px;
+        font-size: 5.6rem;
+        font-weight: 400;
+        line-height: 142.857%;
+        text-align: center;
+
+        @include abstracts.screen(xxl) {
+            margin-top: 56px;
+        }
+
+        @include abstracts.screen(xl) {
+            margin-top: 60px;
+            font-size: 4.4rem;
+        }
+
+        @include abstracts.screen(lg) {
+            margin-top: 30px;
+            font-size: 4rem;
+        }
+
+        @include abstracts.screen(md) {
+            margin-top: 90px;
+            font-size: 4.6rem;
+        }
+    }
+
+    &__discount {
+        text-wrap: nowrap;
+    }
+
+    &__text {
+        margin-top: 12px;
+        text-align: center;
+
+        font-size: 1.4rem;
+        line-height: 171.429%;
+
+        @include abstracts.screen(lg) {
+            font-size: 1.2rem;
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 1.4rem;
+        }
+    }
+
+    &__desc {
+        text-wrap: nowrap;
+    }
+}
