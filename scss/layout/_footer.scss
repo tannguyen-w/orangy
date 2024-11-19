@@ -1,0 +1,89 @@
+@use "../abstracts";
+
+.footer {
+    padding: 50px 0 10px;
+    background: var(--second-background);
+
+    @include abstracts.screen(md) {
+        padding: 30px 0 10px;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        color: var(--second-text);
+
+        @include abstracts.screen(md) {
+            align-items: flex-start;
+        }
+    }
+
+    &__top {
+        @include abstracts.screen(md) {
+            width: 100%;
+        }
+    }
+
+    &__title {
+        font-size: 3.2rem;
+        line-height: 131.25%;
+
+        text-align: center;
+        @include abstracts.screen(md) {
+            text-align: left;
+
+            font-size: 2.4rem;
+            line-height: 140%;
+        }
+    }
+
+    &__desc {
+        margin-top: 8px;
+        font-size: 1.6rem;
+        line-height: 150%;
+
+        text-align: center;
+        @include abstracts.screen(md) {
+            text-align: left;
+        }
+    }
+
+    &__input {
+        margin-top: 24px;
+        width: 100%;
+        padding: 14px 17px;
+        border: 1px solid #f6f2ee;
+        background: #fff;
+    }
+
+    &__social {
+        margin-top: 20px;
+
+        @include abstracts.screen(md) {
+            margin-left: -8px;
+        }
+
+        &--link {
+            display: inline-block;
+            padding: 4px 8px;
+            translate: 0 4px;
+            transform: translate(0) 0.5s;
+        }
+
+        &--link:hover {
+            translate: 0;
+        }
+    }
+
+    &__bottom {
+        margin-top: 24px;
+        margin-bottom: 10px;
+    }
+
+    &__page--link {
+        border-bottom: 1px solid #fff;
+    }
+}
