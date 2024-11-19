@@ -1,0 +1,38 @@
+@use "../abstracts";
+
+.service-item {
+    @include abstracts.screen(md) {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+    }
+
+    &__icon {
+        @include abstracts.screen(md) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__title {
+        margin-top: 24px;
+
+        font-size: 2rem;
+        line-height: 160%;
+
+        @include abstracts.screen(md) {
+            margin-top: 0;
+        }
+    }
+
+    &__desc {
+        margin-top: 8px;
+
+        font-size: 1.6rem;
+        line-height: 150%;
+
+        @include abstracts.screen(md) {
+            margin-top: 4px;
+        }
+    }
+}
