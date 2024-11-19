@@ -1,0 +1,43 @@
+@use "../abstracts";
+
+.header {
+    &__content {
+        &-top {
+            display: flex;
+            padding: 5px 20px;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--second-text);
+            background: var(--second-background);
+
+            @include abstracts.screen(md) {
+                padding: 8px 15px;
+            }
+
+            &--arrow {
+                padding: 7px;
+            }
+
+            &--arrow:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__phone,
+    &__address {
+        font-size: 1.4rem;
+        line-height: 171.429%;
+    }
+
+    &__logo {
+        margin: 10px 0;
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 75%;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}

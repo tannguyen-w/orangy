@@ -19,3 +19,27 @@ function load(selector, path) {
             window.dispatchEvent(new Event("template-loaded"));
         });
 }
+
+// Header
+function handleArrowClick() {
+    const arrows = $$(".header__content-top--arrow");
+
+    arrows.forEach((arrow) => {
+        arrow.onclick = () => {
+            console.log(arrow);
+
+            const infoPhone = $(".header__phone");
+            const infoAddress = $(".header__address");
+            if (infoPhone.classList.contains("d-md-none")) {
+                infoPhone.classList.remove("d-md-none");
+                infoAddress.classList.add("d-md-none");
+            } else {
+                infoPhone.classList.add("d-md-none");
+                infoAddress.classList.remove("d-md-none");
+            }
+        };
+    });
+}
+
+window.addEventListener("template-loaded", handleArrowClick);
+handleArrowClick();
