@@ -43,3 +43,27 @@ function handleArrowClick() {
 
 window.addEventListener("template-loaded", handleArrowClick);
 handleArrowClick();
+
+// Cate product
+function handleCateClick() {
+    const categories = $$(".products-cate__item");
+    const productCate = $$(".products-list");
+
+    categories.forEach((cate, index1) => {
+        cate.onclick = () => {
+            let cateOld = $(".products-cate__item--active");
+            cateOld.classList.remove("products-cate__item--active");
+            cate.classList.add("products-cate__item--active");
+
+            productCate.forEach((item, index2) => {
+                if (index1 === index2) {
+                    let productCateOld = $(".products-list--active");
+                    productCateOld.classList.remove("products-list--active");
+                    item.classList.add("products-list--active");
+                }
+            });
+        };
+    });
+}
+window.addEventListener("template-loaded", handleCateClick);
+handleCateClick();
