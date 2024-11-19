@@ -1,0 +1,11 @@
+@use "../abstracts";
+
+.service {
+    &__inner {
+        margin: 80px 0;
+
+        @include abstracts.screen(md) {
+            margin: 50px 0;
+        }
+    }
+}
