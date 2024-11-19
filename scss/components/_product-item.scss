@@ -1,0 +1,76 @@
+@use "../abstracts";
+
+.product-item {
+    height: 100%;
+
+    &__link {
+        position: relative;
+    }
+
+    &__tags {
+        position: absolute;
+
+        top: 12px;
+        left: 12px;
+    }
+
+    @include abstracts.screen(lg) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+
+        @include abstracts.screen(xl) {
+            height: 400px;
+        }
+
+        @include abstracts.screen(lg) {
+            height: 320px;
+        }
+
+        @include abstracts.screen(md) {
+            height: 240px;
+        }
+    }
+
+    &__desc {
+        color: rgba(0, 0, 0, 0.6);
+        margin-top: 16px;
+        font-size: 1.4rem;
+        line-height: 157.143%;
+        text-transform: uppercase;
+    }
+
+    &__name {
+        margin-top: 4px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 161.75%;
+        @include abstracts.screen(lg) {
+            margin-bottom: auto;
+        }
+    }
+
+    &__price {
+        margin-top: 6px;
+        font-size: 1.6rem;
+        line-height: 140.625%;
+        @include abstracts.screen(sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__price--old.discounted {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+    &__price--new {
+        color: #d63a2f;
+        text-decoration: none;
+    }
+}
