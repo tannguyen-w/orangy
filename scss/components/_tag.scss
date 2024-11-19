@@ -1,0 +1,32 @@
+@use "../abstracts";
+
+.tag {
+    padding: 3px 9px;
+    color: var(--second-text);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 128.571%;
+
+    position: relative;
+
+    &__new {
+        background: #054e4a;
+    }
+
+    &__sell {
+        display: block;
+        margin-bottom: 5px;
+        background: #000;
+    }
+
+    &__discount {
+        padding: 11px 6px 11px 10px;
+        background: #a42003;
+        position: absolute;
+        top: 0px;
+
+        @include abstracts.screen(lg) {
+            padding: 3px 9px;
+        }
+    }
+}
