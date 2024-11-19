@@ -1,0 +1,62 @@
+@use "../abstracts";
+
+.hero-banner {
+    &__inner {
+        background: url(../../assets/images/banner/hero-banner.png) no-repeat;
+        background-position: bottom;
+        background-size: cover;
+        height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__info {
+        width: min(350px, 100%);
+        color: var(--second-text);
+        text-align: center;
+    }
+
+    &__slogan {
+        font-size: 7.2rem;
+        line-height: 125%;
+
+        @include abstracts.screen(md) {
+            font-size: 5.6rem;
+            line-height: 137.143%;
+        }
+    }
+
+    &__desc {
+        margin-top: 24px;
+        font-size: 1.8rem;
+        line-height: 166.667%;
+
+        @include abstracts.screen(md) {
+            margin-top: 12px;
+        }
+    }
+
+    &__explore {
+        display: inline-block;
+        margin-top: 32px;
+        margin-bottom: 3px;
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 150%;
+        text-transform: uppercase;
+
+        border-bottom: 1px solid;
+        translate: 0 4px;
+        transition: translate 0.2s;
+
+        @include abstracts.screen(md) {
+            margin-top: 24px;
+        }
+    }
+
+    &__explore:hover {
+        translate: 0;
+    }
+}
