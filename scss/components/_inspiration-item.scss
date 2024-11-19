@@ -1,0 +1,74 @@
+@use "../abstracts";
+
+.inspiration-item {
+    @include abstracts.screen(md) {
+        flex: 0 0 auto;
+        width: 265px;
+    }
+
+    &:nth-child(even) {
+        margin-top: 80px;
+        @include abstracts.screen(xxl) {
+            margin-top: 60px;
+        }
+
+        @include abstracts.screen(xl) {
+            margin-top: 50px;
+        }
+
+        @include abstracts.screen(lg) {
+            margin-top: 30px;
+        }
+
+        @include abstracts.screen(md) {
+            margin-top: 80px;
+        }
+    }
+
+    &:nth-child(even) .inspiration-item__img {
+        height: 216px;
+
+        @include abstracts.screen(xxl) {
+            height: 180px;
+        }
+
+        @include abstracts.screen(lg) {
+            height: 140px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__title {
+        margin-top: 16px;
+        font-size: 2.4rem;
+        line-height: 158.333%;
+
+        @include abstracts.screen(lg) {
+            font-size: 1.8rem;
+            margin-top: 12px;
+        }
+    }
+
+    &__desc {
+        margin-top: 8px;
+        font-size: 1.6rem;
+        line-height: 150%;
+
+        @include abstracts.screen(xl) {
+            display: -webkit-box;
+            -webkit-line-clamp: 4; /* Số dòng bạn muốn hiển thị */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        @include abstracts.screen(lg) {
+            margin-top: 4px;
+            font-size: 1.4rem;
+        }
+    }
+}
