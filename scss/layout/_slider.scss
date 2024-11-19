@@ -35,7 +35,7 @@
 
     &__inner {
         display: flex;
-        animation: move 10s linear infinite;
+        animation: run 10s linear infinite;
     }
 
     &__item {
@@ -62,7 +62,7 @@
     }
 }
 
-@keyframes move {
+@keyframes run {
     0% {
         transform: translateX(0);
     }
