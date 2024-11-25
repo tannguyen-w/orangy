@@ -141,6 +141,26 @@ table {
   border-spacing: 0;
 }
 
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+form {
+  margin: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 100%; /* 1 */
+  margin: 0; /* 2 */
+  vertical-align: baseline; /* 3 */
+  *vertical-align: middle; /* 3 */
+}
+
 *,
 ::before,
 ::after {
