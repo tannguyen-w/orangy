@@ -1,13 +1,24 @@
+@use "../abstracts";
+
 .contact-form {
     margin-top: 100px;
     padding: 100px 0 56px;
     background: #f6f3ee;
+
+    @include abstracts.screen(md) {
+        padding-top: 48px;
+    }
 
     &__heading {
         display: flex;
         justify-content: center;
         font-size: 3.6rem;
         line-height: 133.333%;
+
+        @include abstracts.screen(md) {
+            font-size: 2.8rem;
+            line-height: 137.143%;
+        }
     }
 
     &__desc {

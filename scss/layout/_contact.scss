@@ -196,7 +196,7 @@
 
     &__address {
         margin-top: 20px;
-        width: 370px;
+        width: min(370px, 100%);
         text-align: center;
         font-size: 3.2rem;
         line-height: 175%;
