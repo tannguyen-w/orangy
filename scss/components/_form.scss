@@ -1,0 +1,59 @@
+.form {
+    margin-top: 60px;
+
+    &-group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &-label {
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+
+    &-control {
+        margin-top: 8px;
+        padding: 14px 17px;
+        font-size: 1.6rem;
+
+        border: 1px solid #e6e6e6;
+        background: #fff;
+
+        &::placeholder {
+            font-size: 1.6rem;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &-message {
+        margin: 3px 0 13px 17px;
+        font-size: 1.2rem;
+        line-height: 150%;
+    }
+
+    &-area {
+        min-height: 180px;
+    }
+
+    &-submit {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 36px;
+        padding: 9px 50px;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 187.5%;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+
+        background: #000;
+        color: #fff;
+    }
+
+    &-submit:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
+}
