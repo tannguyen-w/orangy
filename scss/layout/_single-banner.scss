@@ -8,12 +8,19 @@
     background-size: cover;
     background-position: center;
 
+    @include abstracts.screen(md) {
+        background: url(../../assets/images/banner/banner-bg-mobile.png) no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
     &__inner {
         padding: 40px 0 100px;
         background: rgb(0, 0, 0, 0.5);
 
         @include abstracts.screen(md) {
             padding: 230px 0 142px;
+            background: rgb(0, 0, 0, 0);
         }
     }
 
@@ -25,6 +32,10 @@
 
         margin-top: 80px;
         color: var(--second-text);
+
+        @include abstracts.screen(md) {
+            margin-top: 0;
+        }
     }
 
     &__title {
@@ -34,6 +45,7 @@
 
         @include abstracts.screen(md) {
             font-size: 4.8rem;
+            width: 200px;
         }
     }
 
