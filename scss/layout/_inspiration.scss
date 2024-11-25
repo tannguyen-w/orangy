@@ -1,7 +1,19 @@
 @use "../abstracts";
 
 .inspiration {
+    margin-top: 100px;
+
+    @include abstracts.screen(md) {
+        margin-top: 48px;
+    }
+
+    &__heading--center {
+        display: flex;
+        justify-content: center;
+    }
+
     &__heading {
+        width: min(550px, 100%);
         font-size: 3.6rem;
         line-height: 133.333%;
         text-align: center;
