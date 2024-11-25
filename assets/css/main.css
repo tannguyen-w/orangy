@@ -1724,6 +1724,9 @@ h4 {
   }
 }
 
+.form {
+  margin-top: 60px;
+}
 .form-group {
   display: flex;
   flex-direction: column;
@@ -1995,9 +1998,6 @@ h4 {
     transform: translateX(-100%);
   }
 }
-.sale {
-  margin-bottom: 50px;
-}
 .sale__img {
   width: 100%;
   height: 100%;
@@ -2107,6 +2107,9 @@ h4 {
   text-wrap: nowrap;
 }
 
+.inspiration {
+  margin-top: 100px;
+}
 .inspiration__heading {
   font-size: 3.6rem;
   line-height: 133.333%;
@@ -2507,6 +2510,23 @@ h4 {
 }
 .footer__page--link {
   border-bottom: 1px solid #fff;
+}
+
+.contact-form {
+  margin-top: 100px;
+  padding: 100px 0 56px;
+  background: #f6f3ee;
+}
+.contact-form__heading {
+  display: flex;
+  justify-content: center;
+  font-size: 3.6rem;
+  line-height: 133.333%;
+}
+.contact-form__desc {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
