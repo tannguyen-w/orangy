@@ -28,4 +28,30 @@
         font-size: 1.2rem;
         line-height: 150%;
     }
+
+    &-area {
+        min-height: 180px;
+    }
+
+    &-submit {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 36px;
+        padding: 9px 50px;
+
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 187.5%;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+
+        background: #000;
+        color: #fff;
+    }
+
+    &-submit:hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
 }
