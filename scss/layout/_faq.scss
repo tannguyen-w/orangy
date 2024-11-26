@@ -1,0 +1,86 @@
+@use "../abstracts";
+.faq {
+    margin-top: 100px;
+
+    @include abstracts.screen(md) {
+        margin-top: 60px;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__heading {
+        font-size: 3.6rem;
+        line-height: 133.333%;
+
+        text-align: center;
+
+        @include abstracts.screen(md) {
+            font-size: 2.8rem;
+            line-height: 137.143%;
+        }
+
+        &--separate {
+            height: 0;
+        }
+    }
+
+    &__content {
+        margin-top: 40px;
+
+        @include abstracts.screen(md) {
+            margin-top: 30px;
+        }
+    }
+
+    &__item-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 0;
+
+        &:hover {
+            background: #f6f3ee;
+            cursor: pointer;
+        }
+    }
+
+    &__question {
+        font-size: 2.6rem;
+        line-height: 146.154%;
+
+        @include abstracts.screen(md) {
+            font-size: 2rem;
+            line-height: 152%;
+        }
+    }
+
+    &__icon {
+        margin-left: 12px;
+    }
+
+    &__separate {
+        height: 1px;
+        background: #ededed;
+    }
+
+    &__answer {
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.7s ease;
+
+        width: min(700px, 100%);
+        padding-top: 16px;
+        font-size: 1.6rem;
+        line-height: 150%;
+    }
+}
+
+.open {
+    max-height: 500px;
+}
+
+.active {
+    background: #000;
+}
