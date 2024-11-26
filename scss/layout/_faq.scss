@@ -6,6 +6,10 @@
         margin-top: 60px;
     }
 
+    &__item {
+        margin-bottom: 20px;
+    }
+
     &__heading {
         font-size: 3.6rem;
         line-height: 133.333%;
@@ -62,12 +66,21 @@
     }
 
     &__answer {
-        display: none;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.7s ease;
+
         width: min(700px, 100%);
-        max-height: 500px;
         padding-top: 16px;
-        padding-bottom: 20px;
         font-size: 1.6rem;
         line-height: 150%;
     }
+}
+
+.open {
+    max-height: 500px;
+}
+
+.active {
+    background: #000;
 }

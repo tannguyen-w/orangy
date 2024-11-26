@@ -74,8 +74,8 @@ function handleFaqClick() {
 
     // Hien thi cau tra loi dau tien khi tai trang
     if (faqItems.length > 0) {
-        faqItems[0].querySelector(".faq__separate").style.backgroundColor = "#000";
-        faqItems[0].querySelector(".faq__answer").style.display = "block";
+        faqItems[0].querySelector(".faq__separate").classList.toggle("active");
+        faqItems[0].querySelector(".faq__answer").classList.add("open");
         faqItems[0].querySelector(".faq__icon").src = "./assets/icons/minus.svg";
     }
 
@@ -85,19 +85,21 @@ function handleFaqClick() {
 
             question.addEventListener("click", () => {
                 // Ẩn tất cả các câu trả lời
-                faqItems.forEach((faq) => {
-                    faq.querySelector(".faq__separate").style.backgroundColor = "#ededed";
-                    faq.querySelector(".faq__answer").style.display = "none";
-                    faq.querySelector(".faq__icon").src = "./assets/icons/plus.svg"; // Icon chuyển thành dấu cộng
-                });
+                // faqItems.forEach((faq) => {
+                //     faq.querySelector(".faq__separate").classList.toggle("active");
+                //     faq.querySelector(".faq__answer").classList.toggle("open");
+                //     faq.querySelector(".faq__icon").src = "./assets/icons/plus.svg"; // Icon chuyển thành dấu cộng
+                // });
 
                 // Hiển thị câu trả lời của câu hỏi hiện tại
                 const answer = item.querySelector(".faq__answer");
-                const icon = item.querySelector(".faq__icon");
+                // const icon = item.querySelector(".faq__icon");
+                const icons = item.querySelectorAll(".faq__icon");
                 const separate = item.querySelector(".faq__separate");
-                answer.style.display = "block";
-                separate.style.backgroundColor = "#000";
-                icon.src = "./assets/icons/minus.svg"; // Icon chuyển thành dấu trừ
+                answer.classList.toggle("open");
+                separate.classList.toggle("active");
+                // icon.src = "./assets/icons/minus.svg"; // Icon chuyển thành dấu trừ
+                icons.forEach((icon) => icon.classList.toggle("d-none"));
             });
         });
     }
