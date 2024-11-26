@@ -2664,4 +2664,67 @@ h4 {
   background: #000;
 }
 
+.layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10000;
+}
+.popup__btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border-radius: 24px;
+}
+.popup__btn-img {
+  padding: 14px;
+  border-radius: inherit;
+  border: 1px solid #ededed;
+  background: #fff;
+}
+.popup__btn-img:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+.popup__img {
+  width: 420px;
+  object-fit: cover;
+}
+.popup__inner {
+  display: flex;
+  height: 396px;
+}
+.popup__content {
+  background: #fff;
+  padding: 80px 40px;
+  width: 460px;
+}
+.popup__top {
+  text-align: center;
+}
+.popup__sub-heading {
+  font-size: 3.2rem;
+  line-height: 175%;
+}
+.popup__heading {
+  font-size: 3.6rem;
+  line-height: 155.56%;
+}
+.popup__desc {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.4rem;
+  line-height: 171.429%;
+}
+
 /*# sourceMappingURL=main.css.map */
