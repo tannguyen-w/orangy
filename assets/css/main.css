@@ -2639,6 +2639,7 @@ h4 {
   }
 }
 .faq__icon {
+  display: block;
   margin-left: 12px;
 }
 .faq__separate {
