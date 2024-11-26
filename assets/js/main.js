@@ -69,40 +69,37 @@ window.addEventListener("template-loaded", handleCateClick);
 handleCateClick();
 
 // FAQs click
+
 function handleFaqClick() {
     const faqItems = $$(".faq__item");
+    const questions = $$(".faq__item-top");
 
-    // Hien thi cau tra loi dau tien khi tai trang
-    if (faqItems.length > 0) {
-        faqItems[0].querySelector(".faq__separate").classList.toggle("active");
-        faqItems[0].querySelector(".faq__answer").classList.add("open");
-        faqItems[0].querySelector(".faq__icon").src = "./assets/icons/minus.svg";
-    }
+    questions.forEach((question) => {
+        question.addEventListener("click", () => {
+            questions.forEach((q) => {
+                if (q !== question) {
+                    const faqItem = q.parentElement;
+                    const answerElement = faqItem.querySelector(".faq__answer");
+                    const separateElement = faqItem.querySelector(".faq__separate");
+                    const iconElement = faqItem.querySelector(".faq__icon");
 
-    if (faqItems) {
-        faqItems.forEach((item) => {
-            const question = item.querySelector(".faq__item-top");
-
-            question.addEventListener("click", () => {
-                // Ẩn tất cả các câu trả lời
-                // faqItems.forEach((faq) => {
-                //     faq.querySelector(".faq__separate").classList.toggle("active");
-                //     faq.querySelector(".faq__answer").classList.toggle("open");
-                //     faq.querySelector(".faq__icon").src = "./assets/icons/plus.svg"; // Icon chuyển thành dấu cộng
-                // });
-
-                // Hiển thị câu trả lời của câu hỏi hiện tại
-                const answer = item.querySelector(".faq__answer");
-                // const icon = item.querySelector(".faq__icon");
-                const icons = item.querySelectorAll(".faq__icon");
-                const separate = item.querySelector(".faq__separate");
-                answer.classList.toggle("open");
-                separate.classList.toggle("active");
-                // icon.src = "./assets/icons/minus.svg"; // Icon chuyển thành dấu trừ
-                icons.forEach((icon) => icon.classList.toggle("d-none"));
+                    if (answerElement.classList.contains("open")) {
+                        answerElement.classList.remove("open");
+                        separateElement.classList.remove("active");
+                        iconElement.src = "./assets/icons/plus.svg";
+                    }
+                }
             });
+
+            const faqItemElement = question.parentElement;
+            const answer = faqItemElement.querySelector(".faq__answer");
+            const separate = faqItemElement.querySelector(".faq__separate");
+            const icon = faqItemElement.querySelector(".faq__icon");
+
+            answer.classList.toggle("open");
+            separate.classList.toggle("active");
+            icon.src = answer?.classList.contains("open") ? "./assets/icons/minus.svg" : "./assets/icons/plus.svg";
         });
-    }
+    });
 }
-window.addEventListener("template-loaded", handleFaqClick);
-handleFaqClick();
+document.addEventListener("DOMContentLoaded", handleFaqClick);
