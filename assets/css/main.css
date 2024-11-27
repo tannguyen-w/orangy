@@ -2808,5 +2808,8 @@ h4 {
     transform: scale(1);
   }
 }
+.popup-contact {
+  background: #fff;
+}
 
 /*# sourceMappingURL=main.css.map */
