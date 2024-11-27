@@ -37,6 +37,7 @@
         <!-- Script -->
         <script src="./assets/js/main.js"></script>
         <script src="./assets/js/cookie-bar.js"></script>
+        <script src="./assets/js/contact-form.js"></script>
     </head>
     <body>
         <div id="popup">
@@ -139,5 +140,24 @@
         </footer>
 
         <script src="./assets/js/script.js"></script>
+
+        <!-- Tao thu vien validator -->
+        <script src="./assets/js/validator.js"></script>
+        <script>
+            Validator({
+                form: "#form-contact",
+                errorSelector: ".form-message",
+                rules: [
+                    Validator.isRequired("#fullname", "Please enter your fullname"),
+                    Validator.isRequired("#email", "Please enter this field"),
+                    Validator.isEmail("#email"),
+                    Validator.isPhone("#telephone", 10),
+                ],
+                onSubmit: function (data) {
+                    // Call API
+                    console.log(data);
+                },
+            });
+        </script>
     </body>
 </html>
