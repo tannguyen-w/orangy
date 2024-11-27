@@ -2810,6 +2810,12 @@ h4 {
 }
 .popup-contact {
   background: #fff;
+  padding: 40px 60px;
+}
+
+.popup-contact .popup__inner {
+  height: 100%;
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */
