@@ -146,11 +146,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Popup contact and letter
 document.addEventListener("DOMContentLoaded", () => {
-    const popupLayout = $("#popup__contact-layout");
+    const popupContactLayout = $("#popup__contact-layout");
+    const popupNewsletterLayout = $("#popup__newsletter-layout");
 
-    popupLayout.addEventListener("click", (e) => {
+    popupContactLayout.addEventListener("click", (e) => {
         if (e.target.classList.value === "layout" || e.target.classList.value === "popup__btn-img") {
-            popupLayout.classList.add("d-none");
+            popupContactLayout.classList.add("d-none");
+        }
+    });
+
+    popupNewsletterLayout.addEventListener("click", (e) => {
+        if (e.target.classList.value === "layout" || e.target.classList.value === "popup__btn-img") {
+            popupNewsletterLayout.classList.add("d-none");
         }
     });
 });
