@@ -103,3 +103,43 @@ function handleFaqClick() {
     });
 }
 document.addEventListener("DOMContentLoaded", handleFaqClick);
+
+// Popup
+document.addEventListener("DOMContentLoaded", () => {
+    const popupLayout = $("#popup__layout");
+
+    let popupTimer;
+
+    const showPopup = () => {
+        const lastClosedTime = localStorage.getItem("popupClosedTime");
+        if (lastClosedTime) {
+            const elapsedTime = Date.now() - parseInt(lastClosedTime, 10);
+            // Nếu chưa đủ 4 giờ (4 * 60 * 60 * 1000 ms), không hiển thị
+            if (elapsedTime < 4 * 60 * 60 * 1000) return;
+        }
+        popupLayout.classList.remove("d-none");
+    };
+
+    const hidePopup = () => {
+        popupLayout.classList.add("d-none");
+        localStorage.setItem("popupClosedTime", Date.now());
+    };
+
+    popupLayout.addEventListener("click", (e) => {
+        if (e.target.classList.value === "layout" || e.target.classList.value === "popup__btn-img") {
+            hidePopup();
+        }
+    });
+
+    const handleUserInteraction = () => {
+        clearTimeout(popupTimer);
+        popupTimer = setTimeout(showPopup, 3000);
+        console.log(popupTimer);
+
+        document.removeEventListener("mousemove", handleUserInteraction);
+        document.removeEventListener("touchmove", handleUserInteraction);
+    };
+
+    document.addEventListener("mousemove", handleUserInteraction);
+    document.addEventListener("touchmove", handleUserInteraction);
+});

@@ -2675,11 +2675,12 @@ h4 {
 }
 
 .popup {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  translate: -50% -50%;
   z-index: 10000;
+  animation: fadeIn ease-in-out 0.5s;
 }
 .popup__btn {
   position: absolute;
@@ -2794,6 +2795,17 @@ h4 {
 @media (max-width: 575.98px) {
   .popup__desc {
     margin-top: 15px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.3;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
