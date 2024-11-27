@@ -2828,4 +2828,18 @@ h4 {
   text-align: center;
 }
 
+.popup-newsletter {
+  width: 70vw;
+}
+@media (max-width: 1199.98px) {
+  .popup-newsletter {
+    width: min(90vw, 100% - 40px);
+  }
+}
+
+.popup-newsletter .popup__sub-heading,
+.popup-newsletter .popup__inner {
+  width: 100%;
+}
+
 /*# sourceMappingURL=main.css.map */

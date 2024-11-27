@@ -160,3 +160,16 @@
     height: 100%;
     text-align: center;
 }
+
+// Popup newsletter
+.popup-newsletter {
+    width: 70vw;
+    @include abstracts.screen(xl) {
+        width: min(90vw, calc(100% - 40px));
+    }
+}
+
+.popup-newsletter .popup__sub-heading,
+.popup-newsletter .popup__inner {
+    width: 100%;
+}
