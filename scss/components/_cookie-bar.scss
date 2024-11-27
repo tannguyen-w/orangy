@@ -1,0 +1,81 @@
+@use "../abstracts";
+
+.cookie-bar {
+    position: fixed;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+
+        background: rgba(255, 255, 255, 0.8);
+
+        @include abstracts.screen(sm) {
+            flex-direction: column;
+            padding: 12px;
+
+            gap: 6px;
+        }
+    }
+
+    &__desc {
+        font-size: 2rem;
+        line-height: 280%;
+
+        @include abstracts.screen(xl) {
+            line-height: 1.6;
+            font-size: 1.8rem;
+        }
+
+        @include abstracts.screen(xl) {
+            text-align: center;
+            font-size: 1.6rem;
+        }
+    }
+
+    &__control {
+        display: flex;
+        gap: 20px;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+        }
+
+        @include abstracts.screen(sm) {
+            width: 100%;
+            gap: 4px;
+        }
+    }
+
+    &__btn {
+        padding: 5px 20px;
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: 150%;
+        text-transform: uppercase;
+
+        @include abstracts.screen(sm) {
+            padding: 8px 20px;
+        }
+
+        &--accept {
+            background: #000;
+            color: #fff;
+
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+
+        &--ignore:hover {
+            background: #ccc;
+        }
+    }
+}

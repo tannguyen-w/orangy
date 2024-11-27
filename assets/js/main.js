@@ -134,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const handleUserInteraction = () => {
         clearTimeout(popupTimer);
         popupTimer = setTimeout(showPopup, 3000);
-        console.log(popupTimer);
 
         document.removeEventListener("mousemove", handleUserInteraction);
         document.removeEventListener("touchmove", handleUserInteraction);
