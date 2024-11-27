@@ -143,3 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("mousemove", handleUserInteraction);
     document.addEventListener("touchmove", handleUserInteraction);
 });
+
+// Popup contact and letter
+document.addEventListener("DOMContentLoaded", () => {
+    const popupLayout = $("#popup__contact-layout");
+
+    popupLayout.addEventListener("click", (e) => {
+        if (e.target.classList.value === "layout" || e.target.classList.value === "popup__btn-img") {
+            popupLayout.classList.add("d-none");
+        }
+    });
+});
