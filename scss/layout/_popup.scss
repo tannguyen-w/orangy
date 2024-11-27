@@ -146,6 +146,14 @@
 .popup-contact {
     background: #fff;
     padding: 40px 60px;
+
+    @include abstracts.screen(md) {
+        padding: 20px 30px;
+    }
+
+    @include abstracts.screen(sm) {
+        padding: 20px 10px;
+    }
 }
 
 .popup-contact .popup__inner {
