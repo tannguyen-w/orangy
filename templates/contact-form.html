@@ -5,12 +5,12 @@
             receive purchase advice
         </h2>
 
-        <form class="form" method="POST" id="form-contact">
+        <form action="https://testapi.demo.wgentech.com/notify.php" class="form" method="POST" id="form-contact">
             <div class="row row-cols-2 row-cols-md-1 gx-5 gx-xxl-4 gx-lg-3">
                 <div class="col">
                     <div class="form-group">
-                        <label for="fullname" class="form-label">Name *</label>
-                        <input type="text" name="fullname" id="fullname" placeholder="Name" class="form-control" />
+                        <label for="name" class="form-label">Name *</label>
+                        <input type="text" name="name" id="name" placeholder="Name" class="form-control" />
                         <span class="form-message"></span>
                     </div>
                 </div>
@@ -27,8 +27,8 @@
             <div class="row row-cols-2 row-cols-md-1 gx-5 gx-xxl-4 gx-lg-3">
                 <div class="col">
                     <div class="form-group">
-                        <label for="telephone" class="form-label">Phone *</label>
-                        <input type="tel" name="telephone" id="telephone" placeholder="Phone" class="form-control" />
+                        <label for="phone" class="form-label">Phone *</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Phone" class="form-control" />
                         <span class="form-message"></span>
                     </div>
                 </div>
@@ -55,6 +55,17 @@
 
             <button type="submit" class="form-submit">Submit now</button>
         </form>
+
+        <!-- reCaptcha -->
+        <div id="captcha" class="layout d-none">
+            <div class="captcha">
+                <div class="captcha__inner">
+                    <!-- Google reCaptcha -->
+                    <div class="g-recaptcha" data-sitekey="6LfQQowqAAAAAMnDydG3MfZEKvO9WR6GNK_5B7_J"></div>
+                    <button id="verifyCaptcha" class="captcha__btn">Verify</button>
+                </div>
+            </div>
+        </div>
 
         <p class="contact-form__desc">* Required</p>
     </div>

@@ -1,5 +1,5 @@
 // Doi tuong (constructor) Validator
-function Validator(options) {
+export default function Validator(options) {
     function getParent(element, selector) {
         while (element.parentElement) {
             if (element.parentElement.matches(selector)) {
