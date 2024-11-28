@@ -1,0 +1,39 @@
+@use "../abstracts";
+
+#captcha {
+    z-index: 999;
+}
+
+.captcha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &__inner {
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include abstracts.screen(md) {
+            padding: 20px;
+            gap: 12px;
+        }
+    }
+
+    &__btn {
+        padding: 10px 50px;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        background: #000;
+        color: #fff;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

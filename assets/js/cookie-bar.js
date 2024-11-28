@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const ignoreBtn = $(".cookie-bar__btn--ignore");
     const cookieBar = $(".cookie-bar");
 
-    console.log(cookieBar);
-
     checkCookieBar();
 
     acceptBtn.addEventListener("click", () => {

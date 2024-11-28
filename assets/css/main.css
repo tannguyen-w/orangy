@@ -1793,6 +1793,14 @@ h4 {
   opacity: 0.8;
 }
 
+.form-group.invalid .form-control {
+  border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+  color: #f33a58;
+}
+
 .cookie-bar {
   position: fixed;
   bottom: -1px;
@@ -1867,6 +1875,42 @@ h4 {
 }
 .cookie-bar__btn--ignore:hover {
   background: #ccc;
+}
+
+#captcha {
+  z-index: 999;
+}
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.captcha__inner {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+@media (max-width: 767.98px) {
+  .captcha__inner {
+    padding: 20px;
+    gap: 12px;
+  }
+}
+.captcha__btn {
+  padding: 10px 50px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background: #000;
+  color: #fff;
+}
+.captcha__btn:hover {
+  opacity: 0.8;
 }
 
 .header__content-top {
