@@ -37,9 +37,12 @@
         <!-- Script -->
         <script src="./assets/js/main.js"></script>
         <script src="./assets/js/cookie-bar.js"></script>
-        <script src="./assets/js/contact-form.js"></script>
 
         <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <!-- Animation aos -->
+        <link rel="stylesheet" href="./assets/aosLib/aos.css" />
+        <script src="./assets/aosLib/aos.js"></script>
     </head>
     <body>
         <div id="popup">
@@ -116,7 +119,7 @@
 
         <div class="single-banner">
             <div class="single-banner__inner">
-                <div class="single-banner__content">
+                <div class="single-banner__content" data-aos="fade-up" data-aos-duration="1000">
                     <h3 class="single-banner__title">Elevate Your Home</h3>
                     <p class="single-banner__desc">Clever products for every corner</p>
                 </div>
@@ -147,5 +150,9 @@
         <script type="module" src="./assets/js/validator.js"></script>
         <script type="module" src="./assets/js/contact-form.js"></script>
         <script type="module" src="./assets/js/footer-form.js"></script>
+
+        <script>
+            AOS.init();
+        </script>
     </body>
 </html>
