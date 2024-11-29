@@ -51,12 +51,29 @@
         }
     }
 
-    &__input {
-        margin-top: 24px;
-        width: 100%;
-        padding: 14px 17px;
-        border: 1px solid #f6f2ee;
+    &__control {
+        display: flex;
+        align-items: center;
         background: #fff;
+        margin-top: 24px;
+    }
+
+    &__btn {
+        padding: 14px 17px;
+
+        border: none;
+        translate: 0;
+        transition: translate 0.2s;
+
+        &:hover {
+            translate: 4px 0;
+        }
+    }
+
+    &__input {
+        padding: 14px 17px;
+        width: 100%;
+        border: none;
 
         color: #000;
     }

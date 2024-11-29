@@ -46,7 +46,7 @@ export default function Validator(options) {
         return !errorMessage;
     }
 
-    var formElement = $(options.form);
+    var formElement = document.querySelector(options.form);
     if (formElement) {
         // Khi submit form
         formElement.onsubmit = function (e) {
