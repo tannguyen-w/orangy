@@ -177,12 +177,14 @@
         
         // Hiển thị thông tin variant (debug)
         if (variantInfo) {
-            variantInfo.innerHTML = `
-                <p style="font-size: 12px; color: #666; margin-top: 10px;">
-                    Variant ID: ${variant.id} | 
-                    Options: ${variant.options.join(', ')}
-                </p>
-            `;
+            // Use textContent to prevent XSS
+            const p = document.createElement('p');
+            p.style.fontSize = '12px';
+            p.style.color = '#666';
+            p.style.marginTop = '10px';
+            p.textContent = `Variant ID: ${variant.id} | Options: ${variant.options.join(', ')}`;
+            variantInfo.innerHTML = '';
+            variantInfo.appendChild(p);
         }
         
         console.log('[Variant] Updated display for variant:', variant.id);
