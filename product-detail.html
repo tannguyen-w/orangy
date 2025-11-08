@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Product Detail - Orangy Shop</title>
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+
+        <!-- Script -->
+        <script src="./assets/js/main.js"></script>
+
+        <!-- Animation aos -->
+        <link rel="stylesheet" href="./assets/aosLib/aos.css" />
+        <script src="./assets/aosLib/aos.js"></script>
+
+        <style>
+            /* Product Detail Styles */
+            .product-detail {
+                padding: 80px 0;
+            }
+            
+            .product-detail__inner {
+                display: flex;
+                gap: 60px;
+                align-items: flex-start;
+            }
+            
+            .product-detail__gallery {
+                flex: 1;
+            }
+            
+            .product-detail__image {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+            }
+            
+            .product-detail__info {
+                flex: 1;
+            }
+            
+            .product-detail__title {
+                font-size: 36px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                color: #333;
+            }
+            
+            .product-detail__desc {
+                font-size: 16px;
+                color: #666;
+                margin-bottom: 24px;
+                line-height: 1.6;
+            }
+            
+            .product-detail__price {
+                font-size: 32px;
+                font-weight: 700;
+                color: #2c3e50;
+                margin-bottom: 16px;
+            }
+            
+            .product-detail__inventory {
+                margin-bottom: 32px;
+                padding: 12px 16px;
+                background: #f8f9fa;
+                border-radius: 6px;
+                display: inline-block;
+            }
+            
+            .inventory-status {
+                font-size: 14px;
+                color: #333;
+            }
+            
+            .inventory-status strong {
+                font-size: 18px;
+                margin-left: 8px;
+            }
+            
+            .product-detail__options {
+                margin-bottom: 32px;
+            }
+            
+            .option-group {
+                margin-bottom: 24px;
+            }
+            
+            .option-label {
+                display: block;
+                font-size: 16px;
+                font-weight: 600;
+                color: #333;
+                margin-bottom: 12px;
+            }
+            
+            .option-values {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+            }
+            
+            .option-radio {
+                position: relative;
+                cursor: pointer;
+            }
+            
+            .option-radio input[type="radio"] {
+                position: absolute;
+                opacity: 0;
+            }
+            
+            .option-radio span {
+                display: inline-block;
+                padding: 10px 20px;
+                border: 2px solid #ddd;
+                border-radius: 6px;
+                background: #fff;
+                transition: all 0.3s ease;
+                font-size: 14px;
+                font-weight: 500;
+            }
+            
+            .option-radio input[type="radio"]:checked + span {
+                border-color: #2c3e50;
+                background: #2c3e50;
+                color: #fff;
+            }
+            
+            .option-radio:hover span {
+                border-color: #2c3e50;
+            }
+            
+            .product-detail__add-to-cart {
+                width: 100%;
+                padding: 16px 32px;
+                background: #2c3e50;
+                color: #fff;
+                border: none;
+                border-radius: 6px;
+                font-size: 16px;
+                font-weight: 600;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+            
+            .product-detail__add-to-cart:hover:not(:disabled) {
+                background: #1a252f;
+            }
+            
+            .product-detail__add-to-cart:disabled {
+                background: #ccc;
+                cursor: not-allowed;
+            }
+            
+            .product-detail__variant-info {
+                margin-top: 16px;
+            }
+            
+            @media (max-width: 768px) {
+                .product-detail__inner {
+                    flex-direction: column;
+                    gap: 40px;
+                }
+                
+                .product-detail__title {
+                    font-size: 28px;
+                }
+                
+                .product-detail__price {
+                    font-size: 24px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cookie-bar">
+            <script>
+                load("#cookie-bar", "./templates/cookie-bar.html");
+            </script>
+        </div>
+
+        <header id="header">
+            <script>
+                load("#header", "./templates/header.html");
+            </script>
+        </header>
+
+        <!-- Product Data as JSON (needs to be in main page, not template) -->
+        <script id="product-data" type="application/json">
+        {
+          "title": "Luxury Armchair",
+          "options": ["Upholstery", "Material"],
+          "variants": [
+            {
+              "id": 1,
+              "options": ["Fabric", "Wood"],
+              "price": "$999.00",
+              "inventory": 10,
+              "image": "./assets/images/product/product-01.png"
+            },
+            {
+              "id": 2,
+              "options": ["Fabric", "Metal"],
+              "price": "$1099.00",
+              "inventory": 5,
+              "image": "./assets/images/product/product-02.png"
+            },
+            {
+              "id": 3,
+              "options": ["Leather", "Wood"],
+              "price": "$1299.00",
+              "inventory": 8,
+              "image": "./assets/images/product/product-03.png"
+            },
+            {
+              "id": 4,
+              "options": ["Leather", "Metal"],
+              "price": "$1399.00",
+              "inventory": 3,
+              "image": "./assets/images/product/product-04.png"
+            },
+            {
+              "id": 5,
+              "options": ["Velvet", "Wood"],
+              "price": "$1199.00",
+              "inventory": 0,
+              "image": "./assets/images/product/product-05.png"
+            },
+            {
+              "id": 6,
+              "options": ["Velvet", "Metal"],
+              "price": "$1299.00",
+              "inventory": 12,
+              "image": "./assets/images/product/product-06.png"
+            }
+          ]
+        }
+        </script>
+
+        <!-- Product Detail Section -->
+        <div id="product-detail">
+            <script>
+                load("#product-detail", "./templates/product-detail.html");
+            </script>
+        </div>
+
+        <footer id="footer">
+            <script>
+                load("#footer", "./templates/footer.html");
+            </script>
+        </footer>
+
+        <!-- Product Variant Script -->
+        <script src="./assets/js/product-variant.js"></script>
+
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<div class="product-detail">
+    <div class="container">
+        <div class="product-detail__inner">
+            <div class="product-detail__gallery">
+                <img
+                    loading="lazy"
+                    src="./assets/images/product/product-01.png"
+                    alt="Product image"
+                    class="product-detail__image"
+                    id="product-image"
+                />
+            </div>
+            
+            <div class="product-detail__info">
+                <h1 class="product-detail__title">Luxury Armchair</h1>
+                <p class="product-detail__desc">Comfortable and stylish armchair perfect for any living space</p>
+                
+                <div class="product-detail__price" id="product-price">$999.00</div>
+                
+                <div class="product-detail__inventory" id="product-inventory">
+                    <span class="inventory-status">In stock: <strong id="inventory-count">10</strong></span>
+                </div>
+                
+                <div class="product-detail__options">
+                    <!-- Upholstery Option -->
+                    <div class="option-group">
+                        <label class="option-label">Upholstery</label>
+                        <div class="option-values" data-option-name="Upholstery">
+                            <label class="option-radio">
+                                <input type="radio" name="Upholstery" value="Fabric" checked />
+                                <span>Fabric</span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="Upholstery" value="Leather" />
+                                <span>Leather</span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="Upholstery" value="Velvet" />
+                                <span>Velvet</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Material Option -->
+                    <div class="option-group">
+                        <label class="option-label">Material</label>
+                        <div class="option-values" data-option-name="Material">
+                            <label class="option-radio">
+                                <input type="radio" name="Material" value="Wood" checked />
+                                <span>Wood</span>
+                            </label>
+                            <label class="option-radio">
+                                <input type="radio" name="Material" value="Metal" />
+                                <span>Metal</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="product-detail__add-to-cart" id="add-to-cart">Add to Cart</button>
+                
+                <div class="product-detail__variant-info" id="variant-info"></div>
+            </div>
+        </div>
+    </div>
+</div>
