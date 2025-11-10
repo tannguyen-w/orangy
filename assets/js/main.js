@@ -68,41 +68,61 @@ function handleCateClick() {
 window.addEventListener("template-loaded", handleCateClick);
 handleCateClick();
 
-// FAQs click
+// FAQs click - Show popup
 
 function handleFaqClick() {
-    const faqItems = $$(".faq__item");
-    const questions = $$(".faq__item-top");
+    const faqQuestions = $$(".faq__item-top");
+    const faqPopupOverlay = $("#faq-popup-overlay");
+    const faqPopup = $("#faq-popup");
+    const faqPopupClose = $("#faq-popup-close");
+    const faqPopupTitle = $("#faq-popup-title");
+    const faqPopupBody = $("#faq-popup-body");
 
-    questions.forEach((question) => {
+    // Check if elements exist before adding listeners
+    if (!faqQuestions || !faqPopupOverlay || !faqPopup || !faqPopupClose) {
+        return;
+    }
+
+    // Add click listeners to FAQ questions
+    faqQuestions.forEach((question) => {
         question.addEventListener("click", () => {
-            questions.forEach((q) => {
-                if (q !== question) {
-                    const faqItem = q.parentElement;
-                    const answerElement = faqItem.querySelector(".faq__answer");
-                    const separateElement = faqItem.querySelector(".faq__separate");
-                    const iconElement = faqItem.querySelector(".faq__icon");
+            const faqItem = question.parentElement;
+            const questionText = faqItem.querySelector(".faq__question").textContent;
+            const answerText = faqItem.querySelector(".faq__answer").textContent;
 
-                    if (answerElement.classList.contains("open")) {
-                        answerElement.classList.remove("open");
-                        separateElement.classList.remove("active");
-                        iconElement.src = "./assets/icons/plus.svg";
-                    }
-                }
-            });
+            // Update popup content
+            faqPopupTitle.textContent = questionText;
+            faqPopupBody.textContent = answerText;
 
-            const faqItemElement = question.parentElement;
-            const answer = faqItemElement.querySelector(".faq__answer");
-            const separate = faqItemElement.querySelector(".faq__separate");
-            const icon = faqItemElement.querySelector(".faq__icon");
-
-            answer.classList.toggle("open");
-            separate.classList.toggle("active");
-            icon.src = answer?.classList.contains("open") ? "./assets/icons/minus.svg" : "./assets/icons/plus.svg";
+            // Show popup
+            faqPopupOverlay.classList.remove("d-none");
+            setTimeout(() => {
+                faqPopup.classList.add("show");
+            }, 10);
         });
     });
+
+    // Close popup when clicking overlay
+    faqPopupOverlay.addEventListener("click", (e) => {
+        if (e.target === faqPopupOverlay) {
+            closeFaqPopup();
+        }
+    });
+
+    // Close popup when clicking close button
+    faqPopupClose.addEventListener("click", () => {
+        closeFaqPopup();
+    });
+
+    function closeFaqPopup() {
+        faqPopup.classList.remove("show");
+        setTimeout(() => {
+            faqPopupOverlay.classList.add("d-none");
+        }, 300);
+    }
 }
 document.addEventListener("DOMContentLoaded", handleFaqClick);
+window.addEventListener("template-loaded", handleFaqClick);
 
 // Popup
 document.addEventListener("DOMContentLoaded", () => {

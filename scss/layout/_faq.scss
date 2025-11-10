@@ -65,23 +65,79 @@
         height: 1px;
         background: #ededed;
     }
-
-    &__answer {
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 0.7s ease;
-
-        width: min(700px, 100%);
-        padding-top: 16px;
-        font-size: 1.6rem;
-        line-height: 150%;
-    }
-}
-
-.open {
-    max-height: 500px;
 }
 
 .active {
     background: #000;
+}
+
+// FAQ Popup - slide from right
+.faq-popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: min(500px, 90vw);
+    height: 100vh;
+    background: #fff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 10001;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+
+    @include abstracts.screen(md) {
+        width: min(400px, 90vw);
+    }
+
+    @include abstracts.screen(sm) {
+        width: 100vw;
+    }
+
+    &.show {
+        transform: translateX(0);
+    }
+
+    &__content {
+        padding: 80px 40px 40px;
+
+        @include abstracts.screen(md) {
+            padding: 60px 30px 30px;
+        }
+
+        @include abstracts.screen(sm) {
+            padding: 60px 20px 20px;
+        }
+    }
+
+    &__title {
+        font-size: 2.6rem;
+        line-height: 146.154%;
+        margin-bottom: 20px;
+
+        @include abstracts.screen(md) {
+            font-size: 2rem;
+            line-height: 152%;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__separator {
+        height: 1px;
+        background: #000;
+        margin-bottom: 20px;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__body {
+        font-size: 1.6rem;
+        line-height: 150%;
+        color: #333;
+    }
+}
+
+#faq-popup-overlay.show .faq-popup {
+    transform: translateX(0);
 }
