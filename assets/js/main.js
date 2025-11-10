@@ -78,6 +78,11 @@ function handleFaqClick() {
     const faqPopupTitle = $("#faq-popup-title");
     const faqPopupBody = $("#faq-popup-body");
 
+    // Check if elements exist before adding listeners
+    if (!faqQuestions || !faqPopupOverlay || !faqPopup || !faqPopupClose) {
+        return;
+    }
+
     // Add click listeners to FAQ questions
     faqQuestions.forEach((question) => {
         question.addEventListener("click", () => {
@@ -117,6 +122,7 @@ function handleFaqClick() {
     }
 }
 document.addEventListener("DOMContentLoaded", handleFaqClick);
+window.addEventListener("template-loaded", handleFaqClick);
 
 // Popup
 document.addEventListener("DOMContentLoaded", () => {
